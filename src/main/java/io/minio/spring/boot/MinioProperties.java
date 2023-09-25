@@ -24,7 +24,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 public class MinioProperties {
 
 	public static final String PREFIX = "minio";
-	
+
 	/**
 	 * Request endpoint. Endpoint is an URL, domain name, IPv4 or IPv6 address.<pre>
 	 *              Valid endpoints:
@@ -39,7 +39,28 @@ public class MinioProperties {
 	 *              * 192.168.1.60
 	 *              * ::1</pre>
 	 */
-	String endpoint; 
+	String endpoint;
+
+	/**
+	 * Access endpoint. Endpoint is an URL, domain name, IPv4 or IPv6 address.<pre>
+	 *              Valid endpoints:
+	 *              * https://s3.amazonaws.com
+	 *              * https://s3.amazonaws.com/
+	 *              * https://play.min.io:9000
+	 *              * http://play.min.io:9010/
+	 *              * localhost
+	 *              * localhost.localdomain
+	 *              * play.min.io
+	 *              * 127.0.0.1
+	 *              * 192.168.1.60
+	 *              * ::1</pre>
+	 */
+	String access;
+
+	/**
+	 * Can anonymous access be allowed
+	 */
+	boolean anonymous;
 	
 	/**
 	 * Valid port.  It should be in between 1 and 65535.  Unused if endpoint is an URL.
